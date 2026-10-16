@@ -79,17 +79,16 @@ export default function AuthorsPage() {
 
         <Link
           href="/admin/register"
-          className="px-4 py-2 bg-primary text-white text-sm rounded-lg hover:opacity-90 transition"
+          className="px-4 py-2 bg-primary text-text font-medium text-sm rounded-lg hover:opacity-90 transition"
         >
           + Add Author
         </Link>
       </div>
 
-      {/* table */}
       <div className="bg-card border border-border rounded-xl">
         <div className="overflow-x-scroll no-scrollbar">
           <table className="min-w-150 w-full text-sm">
-            <thead className="bg-surface text-gray-400">
+            <thead className="bg-surface text-text/70 font-medium">
               <tr>
                 <th className="text-left px-4 py-3">Name</th>
                 <th className="text-left px-4 py-3">Email</th>

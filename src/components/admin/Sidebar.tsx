@@ -48,7 +48,6 @@ export default function Sidebar() {
         />
       )}
 
-      {/* sidebar */}
       <aside
         className={`fixed top-0 left-0 h-screen w-64 bg-card border-r 
       border-border p-5 flex flex-col z-50 transform transition-transform duration-300 md:translate-x-0 ${open ? "translate-x-0" : "-translate-x-full"}`}
@@ -70,10 +69,10 @@ export default function Sidebar() {
                 href={link.href}
                 key={link.name}
                 onClick={() => setOpen(false)}
-                className={`flex items-center gap-3 px-4 py-6 rounded-lg text-lg transition ${
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition ${
                   isActive
-                    ? "bg-primary text-white"
-                    : "text-gray-400 hover:bg-surface hover:text-white"
+                    ? "bg-primary text-text shadow-xs"
+                    : "text-text/70 hover:bg-surface hover:text-text"
                 }`}
               >
                 <Icon size={18} />
@@ -86,7 +85,7 @@ export default function Sidebar() {
         <div className="mt-auto pt-6 border-t border-border">
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-2 text-sm text-gray-400 hover:text-white transition"
+            className="w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-text/70 hover:text-red-500 hover:bg-red-500/10 transition"
           >
             <BiLogOut size={18} />
             Logout

@@ -10,6 +10,7 @@ interface PostSearchResults {
 import { createClient } from "@/lib/supabase/client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { LuSearch } from "react-icons/lu";
 
 const supabase = createClient();
 
@@ -58,27 +59,30 @@ export default function Searchinput() {
 
   return (
     <div className="max-w-xl mx-auto relative">
-      <div className="flex items-center border border-border rounded-xl overflow-hidden p-1">
+      <div className="flex items-center bg-card border border-border rounded-xl overflow-hidden p-1 shadow-xs">
+        <div className="pl-3 text-text/40">
+          <LuSearch size={18} />
+        </div>
         <input
           type="text"
-          placeholder="Search articles..."
+          placeholder="Search dispatches, artists, or keywords..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full px-4 py-3 bg-transparent outline-none text-sm text-text placeholder-gray-500"
+          className="w-full px-3 py-2.5 bg-transparent outline-none text-sm text-text placeholder-text/40"
         />
-        <button className="px-5 py-2.5 bg-primary text-white text-sm font-medium hover:opacity-90 transition rounded-lg cursor-pointer ">
+        <button className="px-5 py-2.5 bg-primary text-text text-sm font-medium hover:opacity-90 transition rounded-lg cursor-pointer">
           Search
         </button>
       </div>
 
       {query && (
-        <div className="absolute top-full mt-2 w-full bg-card border border-border rounded-xl shadow-lg overflow-hidden z-50">
+        <div className="absolute top-full mt-2 w-full bg-card border border-border rounded-xl shadow-md overflow-hidden z-50">
           {loading && (
-            <p className="px-4 py-4 text-sm text-gray-400">Searching...</p>
+            <p className="px-4 py-4 text-sm text-text/60">Searching dispatches...</p>
           )}
 
           {!loading && results.length === 0 && (
-            <p className="px-4 py-4 text-sm text-gray-400">No posts found!</p>
+            <p className="px-4 py-4 text-sm text-text/60">No stories found matching &ldquo;{query}&rdquo;</p>
           )}
 
           {!loading &&
@@ -87,10 +91,10 @@ export default function Searchinput() {
                 onClick={() => setQuery("")}
                 href={`/post/${post.slug}`}
                 key={post.id}
-                className="block px-4 py-3 hover:bg-surface transition border-b border-border last:border-none"
+                className="group block px-4 py-3 hover:bg-surface transition border-b border-border last:border-none"
               >
-                <p className="text-sm text-text font-medium">{post.title}</p>
-                <p className="text-xs text-gray-400 capitalize mt-1">
+                <p className="text-sm text-text font-medium group-hover:text-primary transition">{post.title}</p>
+                <p className="text-xs text-primary font-medium uppercase tracking-wide mt-1">
                   {post.category}
                 </p>
               </Link>

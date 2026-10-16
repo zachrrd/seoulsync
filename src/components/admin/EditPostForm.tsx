@@ -62,10 +62,10 @@ export default function EditPostForm({ post }: EditPostProps) {
   const config = useMemo(
     () => ({
       placeholder: "Start writing article...",
-      theme: "dark",
+      theme: "default",
       style: {
-        background: "#121212",
-        color: "#d1d5dc",
+        background: "#FFFFFF",
+        color: "#29263A",
       },
     }),
     [],
@@ -168,7 +168,7 @@ export default function EditPostForm({ post }: EditPostProps) {
     >
       {/* title */}
       <div>
-        <label className="block text-sm text-gray-400 mb-2">Title</label>
+        <label className="block text-sm text-text/80 mb-2">Title</label>
         <input
           className="w-full px-4 py-3 bg-surface border border-border rounded-lg text-sm text-text focus:border-primary"
           type="text"
@@ -178,9 +178,8 @@ export default function EditPostForm({ post }: EditPostProps) {
         />
       </div>
 
-      {/* category */}
       <div>
-        <label className="block text-sm text-gray-400 mb-2">Category</label>
+        <label className="block text-sm text-text/80 mb-2">Category</label>
         <select
           className="w-full px-4 py-3 bg-surface border border-border rounded-lg text-sm text-text focus:border-primary"
           value={form.category}
@@ -194,9 +193,8 @@ export default function EditPostForm({ post }: EditPostProps) {
         </select>
       </div>
 
-      {/* status */}
       <div>
-        <label className="block text-sm text-gray-400 mb-2">Status</label>
+        <label className="block text-sm text-text/80 mb-2">Status</label>
         <select
           className="w-full px-4 py-3 bg-surface border border-border rounded-lg text-sm text-text focus:border-primary"
           value={form.status}
@@ -207,9 +205,8 @@ export default function EditPostForm({ post }: EditPostProps) {
         </select>
       </div>
 
-      {/* image */}
       <div>
-        <label className="block text-sm text-gray-400 mb-2">Cover Image</label>
+        <label className="block text-sm text-text/80 mb-2">Cover Image</label>
         <input
           onChange={handleImageChange}
           ref={fileInputRef}
@@ -236,7 +233,7 @@ export default function EditPostForm({ post }: EditPostProps) {
       </div>
 
       <div>
-        <label className="block text-sm text-gray-400 mb-2">Content</label>
+        <label className="block text-sm text-text/80 mb-2">Content</label>
         <div className="rounded-lg bg-white overflow-hidden">
           <JoditEditor
             ref={editor}
@@ -248,7 +245,7 @@ export default function EditPostForm({ post }: EditPostProps) {
       </div>
 
       <div className="flex items-center justify-end">
-        <button className="px-5 py-2 bg-primary text-white text-sm rounded-lg hover:opacity-90 transition">
+        <button className="px-5 py-2 bg-primary text-text font-medium text-sm rounded-lg hover:opacity-90 transition">
           {loading ? "Saving..." : "Save"}
         </button>
       </div>

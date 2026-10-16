@@ -61,36 +61,36 @@ export default function RegisterPage() {
 
         <form onSubmit={handleRegister} className="mt-6 space-y-4">
           <div>
-            <label className="block text-sm text-gray-400 mb-1">Name</label>
+            <label className="block text-sm text-text/80 mb-1">Name</label>
             <input
               value={form.name}
               onChange={(e) => handleChange("name", e.target.value)}
               type="text"
               placeholder="Author name"
-              className="w-full px-3 py-2 bg-surface border border-border rounded-lg outline-none text-sm text-text placehorder-gray-500 focus:border-primary"
+              className="w-full px-3 py-2 bg-surface border border-border rounded-lg outline-none text-sm text-text placeholder-text/40 focus:border-primary"
             />
           </div>
           <div>
-            <label className="block text-sm text-gray-400 mb-1">Email</label>
+            <label className="block text-sm text-text/80 mb-1">Email</label>
             <input
               value={form.email}
               onChange={(e) => handleChange("email", e.target.value)}
               type="text"
               placeholder="you@example.com"
-              className="w-full px-3 py-2 bg-surface border border-border rounded-lg outline-none text-sm text-text placehorder-gray-500 focus:border-primary"
+              className="w-full px-3 py-2 bg-surface border border-border rounded-lg outline-none text-sm text-text placeholder-text/40 focus:border-primary"
             />
           </div>
           <div>
-            <label className="block text-sm text-gray-400 mb-1">Password</label>
+            <label className="block text-sm text-text/80 mb-1">Password</label>
             <input
               value={form.password}
               onChange={(e) => handleChange("password", e.target.value)}
               type="password"
               placeholder="********"
-              className="w-full px-3 py-2 bg-surface border border-border rounded-lg outline-none text-sm text-text placehorder-gray-500 focus:border-primary"
+              className="w-full px-3 py-2 bg-surface border border-border rounded-lg outline-none text-sm text-text placeholder-text/40 focus:border-primary"
             />
           </div>
-          <button disabled={loading} className="w-full py-2.5 bg-primary text-white text-sm font-medium rounded-lg hover:opacity-90 transition">
+          <button disabled={loading} className="w-full py-2.5 bg-primary text-text text-sm font-medium rounded-lg hover:opacity-90 transition">
             {loading ? "Creating..." : "Register"}
           </button>
         </form>

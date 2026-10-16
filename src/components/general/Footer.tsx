@@ -7,8 +7,8 @@ export default function Footer() {
             <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
                 <Logo/>
 
-                <p className="text-xs text-gray-500">
-                    &copy; {new Date().getFullYear()}NextBlog
+                <p className="text-xs text-text/60">
+                    &copy; {new Date().getFullYear()} SeoulSync. All rights reserved.
                 </p>
             </div>
         </div>

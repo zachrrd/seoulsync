@@ -15,11 +15,12 @@ export interface FormState {
   image: null | File;
 }
 
+
 export const categories = [
-  { name: "Technology", slug: "technology" },
-  { name: "Startup", slug: "startup" },
-  { name: "Lifestyle", slug: "lifestyle" },
-  { name: "Finance", slug: "finance" },
+  { name: "Comebacks & Debuts", slug: "comebacks-debuts" },
+  { name: "Music & Album Reviews", slug: "music-album-reviews" },
+  { name: "Concerts & Events", slug: "concerts-events" },
+  { name: "Fan Culture", slug: "fan-culture" },
 ];
 
 const supabase = createClient();
@@ -27,7 +28,7 @@ const supabase = createClient();
 export default function CreatePostPage() {
   const [form, setForm] = useState<FormState>({
     title: "",
-    category: "",
+    category: categories[0].slug,
     content: "",
     status: "draft",
     image: null,
@@ -70,10 +71,10 @@ export default function CreatePostPage() {
   const config = useMemo(
     () => ({
       placeholder: "Start writing article...",
-      theme: "dark",
+      theme: "default",
       style: {
-        background: "#121212",
-        color: "#d1d5dc",
+        background: "#FFFFFF",
+        color: "#29263A",
       },
     }),
     [],
@@ -167,9 +168,8 @@ export default function CreatePostPage() {
       </div>
 
       <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-5 space-y-6 max-w-3xl">
-        {/* title */}
         <div>
-          <label className="block text-sm text-gray-400 mb-2">Title</label>
+          <label className="block text-sm text-text/80 mb-2">Title</label>
           <input
             className="w-full px-4 py-3 bg-surface border border-border rounded-lg text-sm text-text focus:border-primary"
             type="text"
@@ -179,9 +179,8 @@ export default function CreatePostPage() {
           />
         </div>
 
-        {/* category */}
         <div>
-          <label className="block text-sm text-gray-400 mb-2">Category</label>
+          <label className="block text-sm text-text/80 mb-2">Category</label>
           <select
             className="w-full px-4 py-3 bg-surface border border-border rounded-lg text-sm text-text focus:border-primary"
             value={form.category}
@@ -195,9 +194,8 @@ export default function CreatePostPage() {
           </select>
         </div>
 
-        {/* status */}
         <div>
-          <label className="block text-sm text-gray-400 mb-2">Status</label>
+          <label className="block text-sm text-text/80 mb-2">Status</label>
           <select
             className="w-full px-4 py-3 bg-surface border border-border rounded-lg text-sm text-text focus:border-primary"
             value={form.status}
@@ -208,9 +206,8 @@ export default function CreatePostPage() {
           </select>
         </div>
 
-        {/* image */}
         <div>
-          <label className="block text-sm text-gray-400 mb-2">
+          <label className="block text-sm text-text/80 mb-2">
             Cover Image
           </label>
           <input
@@ -242,7 +239,7 @@ export default function CreatePostPage() {
         </div>
 
         <div>
-          <label className="block text-sm text-gray-400 mb-2">Content</label>
+          <label className="block text-sm text-text/80 mb-2">Content</label>
           <div className="rounded-lg bg-white overflow-hidden">
             <JoditEditor
               ref={editor}
@@ -254,7 +251,7 @@ export default function CreatePostPage() {
         </div>
 
         <div className="flex items-center justify-end">
-          <button className="px-5 py-2 bg-primary text-white text-sm rounded-lg hover:opacity-90 transition">
+          <button className="px-5 py-2 bg-primary text-text font-medium text-sm rounded-lg hover:opacity-90 transition">
             {loading ? "Saving..." : "Save"}
           </button>
         </div>

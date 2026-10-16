@@ -10,8 +10,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "SeoulSync",
-  description: "Supabase Blog ZachTech",
+  title: "SeoulSync — K-Pop Editorial & Culture Dispatch",
+  description: "Curated perspectives on K-Pop comebacks, artist spotlights, album reviews, and fandom culture.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

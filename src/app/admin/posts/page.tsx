@@ -65,17 +65,16 @@ export default function PostsPage() {
 
         <Link
           href="/admin/create-post"
-          className="px-4 py-2 bg-primary text-white text-sm rounded-lg hover:opacity-90 transition"
+          className="px-4 py-2 bg-primary text-text font-medium text-sm rounded-lg hover:opacity-90 transition"
         >
           + Add Post
         </Link>
       </div>
 
-      {/* table */}
       <div className="bg-card border border-border rounded-xl">
         <div className="overflow-x-scroll no-scrollbar">
           <table className="min-w-150 w-full text-sm">
-            <thead className="bg-surface text-gray-400">
+            <thead className="bg-surface text-text/70 font-medium">
               <tr>
                 <th className="text-left px-4 py-3">Title</th>
                 <th className="text-left px-4 py-3">Category</th>
@@ -88,13 +87,13 @@ export default function PostsPage() {
             <tbody>
               {loading ? (
                 <tr>
-                  <td colSpan={3} className="py-10 text-center text-gray-400">
+                  <td colSpan={5} className="py-10 text-center text-gray-400">
                     Loading posts...
                   </td>
                 </tr>
               ) : posts.length === 0 ? (
                 <tr>
-                  <td colSpan={3} className="py-10 text-center text-gray-400">
+                  <td colSpan={5} className="py-10 text-center text-gray-400">
                     No posts found!
                   </td>
                 </tr>
